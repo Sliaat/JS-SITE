@@ -6,14 +6,9 @@ const sucessDiv = document.getElementById('sucess-message');
 
 formulario.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (campoB.value <= campoA.value) {
-        campoA.style.border = '1px solid red'; 
-        errorDiv.textContent = 'O valor do campo B não pode ser menor e nem igual ao campo A';
-        sucessDiv.innerHTML = '';
-        errorDiv.style.display = 'block'; 
-        sucessDiv.style.display = 'none'; 
-        return false;
-    } else {
+    const valorA = parseInt(campoA.value);
+    const valorB = parseInt(campoB.value);
+    if (valorB > valorA) {
         campoA.style.border = '';
         errorDiv.textContent = '';
         const mensagemSucesso = document.createElement('p');
@@ -24,8 +19,16 @@ formulario.addEventListener('submit', (event) => {
         errorDiv.style.display = 'none';
         formulario.reset();
         return true;
+    } else {
+        campoA.style.border = '1px solid red'; 
+        errorDiv.textContent = 'O valor do campo B não pode ser menor ou igual ao campo A';
+        sucessDiv.innerHTML = '';
+        errorDiv.style.display = 'block'; 
+        sucessDiv.style.display = 'none'; 
+        return false;
     }
 });
+
 
 
 
