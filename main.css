@@ -38,6 +38,7 @@ form button {
 }
 
 #sucess-message {
+    font-size: 12px;
     background-color: limegreen;
     padding: 14px;
     color: white;
@@ -50,5 +51,4 @@ form button {
     padding: 14px;
     color: white;
     display: none;
-    margin-bottom: 8px;
 }
